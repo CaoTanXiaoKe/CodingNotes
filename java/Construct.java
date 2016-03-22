@@ -1,5 +1,6 @@
 // 程序目的： 演示子类对象实例化过程
-class Pare{
+
+}class Pare{
 	int i = 3;
 	Pare(){}; 
 };
@@ -14,7 +15,6 @@ class Construct extends Pare{
 		System.out.println(ct.i); 
 		System.out.println(ct.getSuper()); 
 	}
-}
 
 /*
 程序输出： 
