@@ -11,11 +11,11 @@ class A
 public class AA extends A
 {
 	int x;
-	public void Printme() 
+	public void Printme()
 	{
 		int z = super.x + 6;
 		super.x = 5;
-		super.Printme(); 
+		super.Printme();
 		System.out.println("I am an " + getClass().getName());
 		x = 6;
 		System.out.println("z= " + z + " x = " + x + "super.x=" + super.x + " y = " + y + "super.y=" + y);
@@ -26,6 +26,6 @@ public class AA extends A
 		A p1 = new A();
 		AA p2 = new AA();
 		p1.Printme();
-		p2.Printme(); 
+		p2.Printme();
 	}
 }

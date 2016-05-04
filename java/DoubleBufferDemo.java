@@ -1,15 +1,15 @@
-import java.awt.*; 
+import java.awt.*;
 import java.awt.event.*;
 
-class MyCanvas extends Canvas
-{
+ class MyCanvas extends Canvas {
 	private Image img; 
-	private Graphics og; 
+	private Graphics og;
 	public void init()
 	{
 		Dimension d = getSize(); 
 		img = createImage(d.width, d.height); 
 		og = img.getGraphics(); 
+		og.setColor(Color.blue);
 		og.fillRect(30, 30, 60, 60);
 		og.setColor(Color.yellow);
 		og.fillOval(15, 15, 30, 30);
@@ -21,12 +21,12 @@ class MyCanvas extends Canvas
 	}
 	public void paint(Graphics g)
 	{
-		if(img != null)
+		if (img != null)
 		{
 			g.drawImage(img, 20, 20, this); 
 		}
-	}
-}; 
+	}	
+};
 
 public class DoubleBufferDemo
 {
@@ -35,7 +35,7 @@ public class DoubleBufferDemo
 		Frame f = new Frame("DoubleBufferDemo"); 
 		f.setBounds(100, 100, 250, 250);
 		MyCanvas mc = new MyCanvas(); 
-		f.add(mc); 
+		f.add(mc);
 		f.setVisible(true);
 		mc.init();
 		mc.repaint();
