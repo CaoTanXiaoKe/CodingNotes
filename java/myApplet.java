@@ -2,37 +2,26 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-class Listener implements ActionListener{
-	private myApplet mya; // myApplet对象引用 
-	//通过构造方法得到myApplet对象的引用 
-	public Listener(myApplet a)
-	{
-		this.mya = a; 
-	}
-	public void actionPerformed(ActionEvent e)
-	{
-		//改变myApplet对象属性d的内容 
-		mya.d = Double.valueOf(mya.input.getText()).doubleValue(); 
-		//调用myApplet对象的refresh()进行刷新
-		mya.refresh(); 
-	}
-}; 
-public class myApplet extends Applet{
-	public TextField input;
-	public double d = 0.0; 
+public class MyApplet extends Applet implements ActionListener{
+	private TextField input;
+	private double d = 0.0; 
 	// 进行初始化工作, 产生对象, 加入监听者 
 	public void init(){
 		input = new TextField(10); 
+		// MyApplet 是容器, input是组件, 调用add使input嵌入容器
+		// 否则对象input即使创建, 也无法在界面中"看到" 
 		add(input); 
-		// input与监听者建立引用关系
-		input.addActionListener(new Listener(this)); 
+		// 本类对象作为监听者身份进行注册, 加入input当中 
+		input.addActionListener(this); 
 	}
 	public void paint(Graphics g)
 	{
 		g.drawString("您输入了数据" + d, 10, 50); 
 	}
-	public void refresh()
-	{
+	public void actionPerformed(ActionEvent e)
+	{	// 首先得到double类的对象, 之后调用对象方法doubleValue得到值
+		d = Double.valueOf(input.getText()).doubleValue(); 
+		// 进行刷新, 调用paint()方法 
 		repaint(); 
 	}
 }
