@@ -3,22 +3,16 @@
 学习网址:[廖雪峰Git教程] (http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 #### 1. 安装完成后，需要设置一下
-<pre><code> 
-$ git config --global user.name "Your Name"
+<pre><code> $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 </code></pre>
 
 #### 2. 初始化版本库
-<pre><code>
-$ git init
-</code></pre>
+<code>$ git init</code>
 
 - 加到暂存区与提交到本地版本库
-<pre><code>
-$ git add <filename>
-
-$ git commit -m "comments" <filename>
-</code></pre>
+<pre><code>$ git add <filename>
+$ git commit -m "comments" <filename></code></pre>
 
 - 用 <code>git status</code>命令查看工作区状态
 - 用 <code>git diff</code>命令查看修改内容
