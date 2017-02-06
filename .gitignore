@@ -1,1 +1,16 @@
-*.class
+java/*.class
+cpp/*.exe
+cpp/CppPrimer/*.exe
+数据结构/*.exe
+深入理解计算机系统/*.exe
+*.mdb
+*.ldb
+*.sln
+*.config
+
+Debug/
+Release/ 
+obj/
+*.cbp
+*.depend
+*.layout
