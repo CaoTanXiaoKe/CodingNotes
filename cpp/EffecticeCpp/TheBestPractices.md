@@ -29,7 +29,7 @@ int a = 5, b = 0;
 CALL_WITH_MAX(++a, b);		// a 被累加两次（因为被访问了两次）
 CALL_WITH_MAX(++a, b+10);	// a 被累加一次（因为被访问了一次）
 ```
-a 的值竟然与和它比较的值有关， 逆天了！！！
+a 的值竟然与和它比较的值有关， 卧槽逆天了！！！
 
 应该成：
 ```cpp
@@ -38,4 +38,34 @@ inline void callWithMax(const T& a, const T& b)
 {
 	return (a > b ? a:b); 
 }
+```
+#### 03: Use const whenever possible. 
+尽可能使用 const
+
+STL迭代器系以指针为根据塑模出来，所以迭代器的作用就像个 T* 指针。声明迭代器为const就像是声明指针为 const 一样（即：声明一个 T* const 指针），表示这个迭代器不得指向不同的东西，但是它指向东西的值是可以改变的。 如果你希望迭代器所指的东西不可被改动（即希望STL模拟一个 const T*指针），你需要的是 const_iterator. 
+
+- 将某些东西声明为 const 可帮助编译器侦测出错误用法。 const 可被施加于任何作用域内的对象，函数参数，函数返回类型，成员函数本体。
+- 编译器强制实施 bitwise constness, 但你编写程序时应该使用“概念上的常量性”（conceptual constness）. 
+- **当 const 和 non-const 成员函数有着实质等价的实现时，令 non-const 版本调用 const 版本可避免代码重复。** 
+例如:
+```cpp
+class TextBlock{
+public:
+ 	...
+  	const char& operator[](std::size_t position) const	
+  	{
+  		...
+		...
+		return text[position];
+  	}
+  	char& operator[](std::size_t position)
+  	{
+  		return
+  			const_cast<char&>(
+  					static_cast<const TextBlock&>(*this)[position]
+  					);
+  	}
+  	...
+}; 
+
 ```
