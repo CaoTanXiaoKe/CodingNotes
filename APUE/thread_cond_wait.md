@@ -1,8 +1,13 @@
 ## 条件变量详解
+
+关于条件变量，APUE中解释的不是太清楚。书上只是简单的描述了一下，很不清晰。
+
+
 > 条件变量给多个线程提供了一个会合的场所。条件变量与互斥量一起使用时，允许线程以无竞争的方式等待特定的条件发生。<br/> 
 条件本身是由互斥量保护的。线程在改变条件状态之前必须首先锁住互斥量。其他线程在获得互斥量之前不会察觉到这种改变，因为互斥量必须在锁定以后才能计算条件。 
 
 > pthead_cond_wait 等待条件变为真。 pthread_cond_timedwait函数与pthread_cond_wait 函数类似，只是多了一个超时，如果在给定的时间条件不能满足，那么会生成一个返回错误码的变量。 
+
 
 ### 实例代码： [生产者-消费者队列完整代码](/2017/07/15/mutex-condition-producer-customer/)
 
@@ -183,6 +188,6 @@ pthread_cond_signal(cond):
 - [pthread_cond_wait() man page](https://linux.die.net/man/3/pthread_cond_wait)
 - [深入理解pthread_cond_wait, pthread_cond_signal](http://blog.csdn.net/yeyuangen/article/details/37593533)
 - [pthread_cond_signal() and pthread_cond_broadcast man page](https://linux.die.net/man/3/pthread_cond_signal)
-- 《Unix环境高级编程》
+- 《Unix环境高级编程》（APUE）
 
 <br/>
