@@ -6,9 +6,6 @@
 
 #### 2. Q: Nginx作为后台服务，http回包被截断，只接到一部分内容，然后超时。
 
-**A：** 查看nginx配置文件中 `client_body_temp_path`的配置路径，查看该路径的磁盘空间是否已经被占满。查找nginx的配置方法: 可通过`nginx -t`或`nginx -V`查看配置文件位置，如果nginx未在环境变量中，可通过 netstat -lanp| grep <端口号>，找到进程pid, `cat /proc/<pid>/cmdline` 查看nginx的二进制文件位置，执行二进制文件 `./<your-nginx-bin-path> -t`来查看配置文件位置。                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-
-
-
+**A：** 查看nginx配置文件中 `client_body_temp_path`的配置路径，查看该路径的磁盘空间是否已经被占满。查找nginx的配置方法: 可通过`nginx -t`或`nginx -V`查看配置文件位置，如果nginx未在环境变量中，可通过 `netstat -lanp| grep <端口号>`，找到进程pid, `cat /proc/<pid>/cmdline` 查看nginx的二进制文件位置，执行二进制文件 `./<your-nginx-bin-path> -t`来查看配置文件位置。                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
 
