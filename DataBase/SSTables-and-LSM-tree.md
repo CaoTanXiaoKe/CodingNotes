@@ -1,6 +1,4 @@
-​        目前最常用的两种数据库无非是：**关系型数据库**和**NoSQL数据库**。 这两种数据库的存储引擎通常是：**日志结构存储引擎(log-structured storage engine)**例如：SSTables 和**面向页的存储引擎(page-oriented storage engine)**例如B树。
-
-
+​       目前最常用的两种数据库无非是：**关系型数据库**和**NoSQL数据库**。 这两种数据库的存储引擎通常是：**日志结构存储引擎(log-structured storage engine)**例如：SSTables 和**面向页的存储引擎(page-oriented storage engine)**例如B树。
 
 ​        **SSTables(Sort String Table)** 是google的大数据三驾马车之一 — [《Bigtable: A Distributed Storage System for Structured Data》](https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf)中引入的词，其结构与Patrick O‘Neil等人发表的[LSM-Tree(Log-Structured)](https://www.cs.umb.edu/~poneil/lsmtree.pdf)类似。在LevelDB，Bitcask, Cassandra, Hbase, 甚至Lucene的关键词字典(term dictionary)中都得到了应用。
 
