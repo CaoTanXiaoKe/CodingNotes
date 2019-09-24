@@ -134,6 +134,16 @@ fs.file-max = 999999
 ```
 
 
+
+
+
+
+### 监控命令
+- `iostat` 生成CPU和IO设备的统计信息报表
+
+
+
+
 ### 在后台运行程序
 - `nohup <command> &` 如： `nohup ping www.chenwenke.cn &`
 - `setsid <command>` 如： `setsid ping www.chenwenke.cn`
