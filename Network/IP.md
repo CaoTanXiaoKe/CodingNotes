@@ -14,3 +14,19 @@
 另外： 
 **在同物理网段的主机如果设定相同的网域IP范围(不可重复)，则这些主机都可以透过CSMA/CD的功能直接在区网内用广播进行网路的连线，亦即可以直接网卡对网卡传递资料(透过MAC讯框)**
 
+
+
+
+
+
+
+### 资料
+
+- [Guide to IP Layer Network Administration with Linux](http://linux-ip.net/html/index.html)
+- [ip route](http://linux-ip.net/html/tools-ip-route.html)
+- [ip rule](http://linux-ip.net/html/tools-ip-rule.html)
+- [Linux 虚拟网络设备之veth](https://segmentfault.com/a/1190000009251098)
+- [Linux网络 - 数据包的接收过程](https://segmentfault.com/a/1190000008836467)
+- [Linux虚拟网络设备之bridge(桥)](https://segmentfault.com/a/1190000008836467)
+- [Linux Namespace 和 Cgroup](https://segmentfault.com/a/1190000009732550)
+
